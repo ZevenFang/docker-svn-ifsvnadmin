@@ -8,25 +8,21 @@
 ## Usage
 ```sh
 git clone https://github.com/ZevenFang/docker-svn-ifsvnadmin svnadmin
+cd svnadmin && chmod -R 777 *
 docker run --name svnadmin -it -dp 8008:80 \
--v "${PWD}/svnadmin/data":/var/www/html/svnadmin/data \
--v "${PWD}/svnadmin/repo":/home/ubuntu/svndata \
--v "${PWD}/svnadmin/conf":/etc/apache2/conf \
+-v "${PWD}/data":/var/www/html/svnadmin/data \
+-v "${PWD}/repo":/home/ubuntu/svndata \
+-v "${PWD}/conf":/etc/apache2/conf \
 zevenfang/svnadmin
 ```
 Then visit `http://localhost:8008/svnadmin`
 
 ## Setting
-Subversion authorization
-`/etc/apache2/conf/access_svn`
-User authentication
-`/etc/apache2/conf/dav_svn.passwd`
-SVNParentPath
-`/home/ubuntu/svndata`
-Subversion client executable
-`/usr/bin/svn`
-Subversion admin executable
-`/usr/bin/svnadmin`
+* Subversion authorization: `/etc/apache2/conf/access_svn`
+* User authentication: `/etc/apache2/conf/dav_svn.passwd`
+* SVNParentPath: `/home/ubuntu/svndata`
+* Subversion client executable: `/usr/bin/svn`
+* Subversion admin executable: `/usr/bin/svnadmin`
 
 ## Volumes
 
