@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER jcordero1987@gmail.com
+MAINTAINER ZevenFang
 ENV DEBIAN_FRONTEND noninteractive
 WORKDIR /tmp
 # Install apache2, php 5.6, subversion, IF.SVNAdmin
